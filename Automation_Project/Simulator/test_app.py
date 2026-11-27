@@ -22,7 +22,6 @@ def test_get_equipment(client):
 def test_get_equipment_by_id(client, equipment_id):
     response = client.get(f"/api/equipment/{equipment_id}")
     assert response.status_code == 200
-    assert response.status_code == 200
     data = response.get_json()
     assert isinstance(data, dict)
     assert data['id'] == 101
